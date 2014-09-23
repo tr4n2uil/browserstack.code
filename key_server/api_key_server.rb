@@ -21,7 +21,7 @@ end
 get '/random/' do
 	api = ApiKey.random
 	if api
-		"API Key : " + api.value
+		"API Key :" + api.value
 	else
 		status 404
 		"No Key Found. Please Try Later"
