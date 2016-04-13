@@ -1,0 +1,5 @@
+mars.rb:31:in `next': Y Out of boundary (RuntimeError)
+	from mars.rb:55:in `block in mars'
+	from mars.rb:54:in `each_char'
+	from mars.rb:54:in `mars'
+	from mars.rb:65:in `<main>'
