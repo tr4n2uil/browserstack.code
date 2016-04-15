@@ -4,10 +4,12 @@
 class Rover
   DIRECTIONS = ['N','E','S','W']
 
-  def initialize(x, y, d)
+  def initialize(x, y, d, xmax, ymax)
     @x = x.to_i
     @y = y.to_i
     @d = DIRECTIONS.index(d)
+    @xmax = xmax
+    @ymax = ymax
   end
 
   def next(p)
@@ -20,12 +22,16 @@ class Rover
       case @d
       when 0
         @y += 1
+        raise "Y Out of boundary" unless @y <= @ymax
       when 1
         @x += 1
+        raise "X Out of boundary" unless @x <= @xmax
       when 2
         @y -= 1
+        raise "Y Out of boundary" unless @y >= 0
       when 3
         @x -= 1
+        raise "X Out of boundary" unless @x >= 0
       end
     end
   end
@@ -38,13 +44,13 @@ end
 
 # mars program
 def mars
-  x_max, y_max = gets.chomp.split
+  xmax, ymax = gets.chomp.split
 
   while rover = gets
     x, y, d = rover.chomp.split
     path = gets.chomp
 
-    rover = Rover.new(x,y,d) 
+    rover = Rover.new(x,y,d,xmax.to_i,ymax.to_i) 
     path.each_char do |c| 
       rover.next(c) 
     end
