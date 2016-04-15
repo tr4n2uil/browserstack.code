@@ -1,0 +1,33 @@
+---
+  author: "Foo Bar <foo@bar.com>"
+  class: "Person"
+  desc: "Represents user info"
+  methods: 
+    - 
+      desc: "accessor for name property"
+      method: "get_name"
+      params: []
+      return: "string"
+      virtual: false
+    - 
+      desc: "modifier for name property"
+      method: "set_name"
+      params: 
+        - 
+          desc: "the new string to be set as name"
+          type: "string&"
+          var: "new_name"
+      return: "string"
+      virtual: false
+  properties: 
+    - 
+      desc: "a string for name of the person"
+      type: "string"
+      var: "name"
+    - 
+      desc: "an integer for the id of the person"
+      type: "int"
+      var: "id"
+  subclasses: []
+  super: 
+    - "User"

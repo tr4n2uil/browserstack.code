@@ -1,0 +1,56 @@
+#include <iostream>
+
+using namespace std;
+
+/** @class Structure for programming information
+ *  @desc “Not to be parsed”
+ *  @author Tom Roberts <tom@pacify.com>
+ */ 
+class Programming: public Base {
+  public:
+
+  // @var a string with language name
+  string language;
+
+  /** @class Not to be parsed
+
+   *  @author Foo Bar <foo@bar.com>
+   */ 
+
+  /** @method run code snippet
+   *
+   *  @param the code string to be run
+   */
+  virtual int eval_code(string &code) = 0;
+  
+  // @var an integer rating for the language
+  int rating;
+
+  /** @class Subclass for Ruby
+   *
+   *  @author Tom Roberts <tom@pacify.com>
+   */ 
+  class Ruby {
+    
+     /** @method constructor for Ruby subclass
+     *  @param an integer for rating Ruby
+     */
+    void ruby(int rating){
+        language = “RUBY”;
+        rating = rating;
+    }
+  }
+
+  /*
+  class PHP {
+    
+     /** @method constructor for PHP subclass
+     *  @param an integer for rating PHP
+     */
+    void php(int rating){
+        language = “PHP”;
+        rating = rating;
+    }
+  }
+  */
+}

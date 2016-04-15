@@ -1,0 +1,45 @@
+---
+  author: "Tom Roberts <tom@pacify.com>"
+  class: "Programming"
+  desc: "Structure for programming information"
+  methods: 
+    - 
+      desc: "run code snippet"
+      method: "eval_code"
+      params: 
+        - 
+          desc: "the code string to be run"
+          type: "string&"
+          var: "code"
+      return: "int"
+      virtual: true
+  properties: 
+    - 
+      desc: "a string with language name"
+      type: "string"
+      var: "language"
+    - 
+      desc: "an integer rating for the language"
+      type: "int"
+      var: "rating"
+  subclasses: 
+    - 
+      author: "Tom Roberts <tom@pacify.com>"
+      class: "Ruby"
+      desc: "Subclass for Ruby"
+      methods: 
+        - 
+          desc: "constructor for Ruby subclass"
+          method: "ruby"
+          params: 
+            - 
+              desc: "an integer for rating Ruby"
+              type: "int"
+              var: "rating"
+          return: "void"
+          virtual: false
+      properties: []
+      subclasses: []
+      super: []
+  super: 
+    - "Base"
